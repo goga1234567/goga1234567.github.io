@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - THE ONE CHAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-terminal-black">
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="container">
+            <div class="nav-content">
+                <h1 class="site-title">
+                    <span class="glitch-effect">THE ONE CHAT</span>
+                    <span class="cursor-blink">_</span>
+                </h1>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">SALONS</a>
+                    <a href="profile.html" class="nav-link">PROFIL</a>
+                    <a href="leaderboard.html" class="nav-link">CLASSEMENTS</a>
+                    <a href="about.html" class="nav-link active">À PROPOS</a>
+                </div>
+                <div class="nav-auth">
+                    <span id="user-status" class="user-pill"></span>
+                    <button id="logout-button" class="icon-button">
+                        <i data-lucide="log-out"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="page-header">
+            <a href="index.html" class="back-link">
+                <i data-lucide="arrow-left"></i> Retour aux salons
+            </a>
+            <h2 class="page-title text-green">À Propos de THE ONE CHAT</h2>
+        </div>
+
+        <div class="terminal-box about-container">
+            <div class="terminal-header">
+                <h3 class="terminal-title text-green">CONCEPT@DESCRIPTION:~$</h3>
+            </div>
+            <div class="terminal-content">
+                <div class="about-section">
+                    <h3 class="section-title text-green">Le Concept</h3>
+                    <p class="about-text">
+                        THE ONE CHAT est une plateforme de discussion rétro-futuriste qui privilégie la qualité du texte et des idées plutôt que les éléments visuels. Dans un monde saturé de contenus visuels, nous revenons à l'essence même de la communication : les mots.
+                    </p>
+                    <p class="about-text">
+                        Notre mission est de créer un espace où l'éloquence, la pertinence et l'originalité sont valorisées, où les idées circulent librement et où les utilisateurs peuvent gagner en influence grâce à la qualité de leurs contributions textuelles.
+                    </p>
+                </div>
+                
+                <div class="about-section">
+                    <h3 class="section-title text-blue">Caractéristiques Uniques</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i data-lucide="users" class="feature-icon text-green"></i>
+                            <div class="feature-details">
+                                <h4 class="feature-title text-green">Système de Followers</h4>
+                                <p class="feature-desc">
+                                    Les utilisateurs peuvent gagner ou perdre des followers en fonction de la qualité de leurs messages. Plus un message reçoit d'upvotes, plus son auteur gagne en influence.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i data-lucide="trophy" class="feature-icon text-yellow"></i>
+                            <div class="feature-details">
+                                <h4 class="feature-title text-yellow">La Ligue des Mots</h4>
+                                <p class="feature-desc">
+                                    Des compétitions hebdomadaires sur des thèmes variés où les utilisateurs peuvent démontrer leur maîtrise du verbe et gagner des récompenses exclusives.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i data-lucide="shield" class="feature-icon text-purple"></i>
+                            <div class="feature-details">
+                                <h4 class="feature-title text-purple">Les Anciens</h4>
+                                <p class="feature-desc">
+                                    Un club exclusif pour les membres de longue date, avec accès à des salons privés et des fonctionnalités spéciales. La fidélité est récompensée.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i data-lucide="award" class="feature-icon text-blue"></i>
+                            <div class="feature-details">
+                                <h4 class="feature-title text-blue">Badges Cachés</h4>
+                                <p class="feature-desc">
+                                    Des accomplissements secrets que les utilisateurs peuvent découvrir au fil de leur parcours. Certains sont évidents, d'autres nécessitent une exploration approfondie.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i data-lucide="mic" class="feature-icon text-red"></i>
+                            <div class="feature-details">
+                                <h4 class="feature-title text-red">La Voix Off</h4>
+                                <p class="feature-desc">
+                                    Un système permettant aux modérateurs d'envoyer des messages anonymes pour guider les discussions sans perturber leur fluidité.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i data-lucide="book" class="feature-icon text-green"></i>
+                            <div class="feature-details">
+                                <h4 class="feature-title text-green">Archives Publiques</h4>
+                                <p class="feature-desc">
+                                    Les meilleures conversations sont préservées dans des archives publiques, créant ainsi une bibliothèque collective de pensées et d'échanges mémorables.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h3 class="section-title text-purple">L'Esthétique Rétro-Futuriste</h3>
+                    <p class="about-text">
+                        Notre design s'inspire des interfaces terminal des années 80 et 90, avec une touche de cyberpunk. Les couleurs vives sur fond sombre, les effets de scanline et de glitch, et les animations subtiles créent une atmosphère à la fois nostalgique et futuriste.
+                    </p>
+                    <p class="about-text">
+                        Cette esthétique n'est pas seulement visuelle, elle influence également la manière dont nous concevons l'interaction : directe, textuelle et sans fioritures inutiles.
+                    </p>
+                </div>
+                
+                <div class="about-section">
+                    <h3 class="section-title text-red">Devenir "THE ONE"</h3>
+                    <p class="about-text">
+                        L'objectif ultime est de devenir l'utilisateur le plus influent de la plateforme - THE ONE. Ce titre est réservé à celui ou celle qui parvient à accumuler le plus grand nombre de followers grâce à ses contributions exceptionnelles.
+                    </p>
+                    <p class="about-text">
+                        THE ONE obtient des privilèges spéciaux, comme la possibilité de créer de nouveaux salons, d'envoyer des messages highlight à tous les utilisateurs, et de personnaliser son profil avec des options exclusives.
+                    </p>
+                    <p class="about-text">
+                        Mais attention : le titre n'est jamais acquis définitivement. Il faut constamment prouver sa valeur pour le conserver, car d'autres utilisateurs aspirent également à cette position prestigieuse.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal-box about-footer">
+            <div class="terminal-header">
+                <h3 class="terminal-title text-yellow">CONTACT@INFORMATION:~$</h3>
+            </div>
+            <div class="terminal-content">
+                <div class="contact-section">
+                    <div class="contact-item">
+                        <i data-lucide="mail" class="contact-icon text-green"></i>
+                        <div class="contact-details">
+                            <h4 class="contact-title">Email</h4>
+                            <p class="contact-value">contact@theonechat.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i data-lucide="github" class="contact-icon text-blue"></i>
+                        <div class="contact-details">
+                            <h4 class="contact-title">GitHub</h4>
+                            <p class="contact-value">github.com/theonechat</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i data-lucide="message-circle" class="contact-icon text-purple"></i>
+                        <div class="contact-details">
+                            <h4 class="contact-title">Discord</h4>
+                            <p class="contact-value">discord.gg/theonechat</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-section">
+                    <h3 class="team-title text-yellow">Notre Équipe</h3>
+                    <p class="team-desc">
+                        THE ONE CHAT a été conçu et développé par une équipe passionnée de concepteurs, développeurs et rédacteurs qui croient au pouvoir des mots et à l'importance d'un espace d'expression textuelle de qualité.
+                    </p>
+                    <p class="version-info text-small">
+                        Version actuelle: 1.0.0 (Avril 2025)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>THE ONE CHAT | v1.0.0 | Expérience textuelle rétro-futuriste</p>
+            <p>Pas de photos. Pas de vidéos. Que du texte. Que des idées.</p>
+            <div class="footer-links">
+                <a href="about.html">À propos</a>
+                <a href="rules.html">Règles</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scanline effect -->
+    <div class="scanline"></div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content terminal-box">
+            <div class="auth-container">
+                <h2 class="modal-title text-green">
+                    THE ONE CHAT
+                    <span class="cursor-blink">_</span>
+                </h2>
+                
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+                
+                <div class="auth-forms">
+                    <form id="login-form" class="auth-form active">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-input" id="login-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="login-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Connect</button>
+                    </form>
+                    
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-input" id="register-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="register-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Create Account</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="auth-info">
+                <h2 class="info-title">Become THE ONE <span class="cursor-blink">_</span></h2>
+                <p class="info-desc">
+                    Bienvenue dans l'arène textuelle du futur. Un forum-chat rétro-moderne où chaque mot compte et peut vous faire gagner ou perdre de l'influence.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <i data-lucide="key"></i>
+                        <h3 class="text-green">Pseudo Unique</h3>
+                        <p>Choisissez votre identité. Votre réputation vous suivra.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="message-square"></i>
+                        <h3 class="text-blue">Salons Thématiques</h3>
+                        <p>Philo, amour, débats, poésie... Trouvez votre terrain d'expression.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="zap"></i>
+                        <h3 class="text-yellow">Messages One-Shot</h3>
+                        <p>Des messages qui s'autodétruisent après lecture.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="trophy"></i>
+                        <h3 class="text-purple">Système de Followers</h3>
+                        <p>Gagnez ou perdez des abonnés selon la qualité de vos messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>

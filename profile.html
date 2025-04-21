@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - THE ONE CHAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-terminal-black">
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="container">
+            <div class="nav-content">
+                <h1 class="site-title">
+                    <span class="glitch-effect">THE ONE CHAT</span>
+                    <span class="cursor-blink">_</span>
+                </h1>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">SALONS</a>
+                    <a href="profile.html" class="nav-link active">PROFIL</a>
+                    <a href="leaderboard.html" class="nav-link">CLASSEMENTS</a>
+                    <a href="about.html" class="nav-link">À PROPOS</a>
+                </div>
+                <div class="nav-auth">
+                    <span id="user-status" class="user-pill"></span>
+                    <button id="logout-button" class="icon-button">
+                        <i data-lucide="log-out"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="page-header">
+            <a href="index.html" class="back-link">
+                <i data-lucide="arrow-left"></i> Retour aux salons
+            </a>
+            <h2 class="page-title text-green">Votre Profil</h2>
+        </div>
+
+        <div class="grid-layout">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- User Profile -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-green">IDENTIFICATION@SYSTEM:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <i data-lucide="user-circle"></i>
+                            </div>
+                            <div class="user-info">
+                                <p class="username text-purple" id="profile-username">Utilisateur</p>
+                                <div class="user-aura">
+                                    <span>Aura:</span>
+                                    <span id="profile-aura" class="text-green">Mystique</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-stats">
+                            <div class="stat-item">
+                                <p class="stat-label">FOLLOWERS</p>
+                                <p class="stat-value text-blue" id="profile-followers">0</p>
+                            </div>
+                            <div class="stat-item">
+                                <p class="stat-label">IMPACT</p>
+                                <p class="stat-value text-yellow" id="profile-impact">0%</p>
+                            </div>
+                            <div class="stat-item">
+                                <p class="stat-label">RANG</p>
+                                <p class="stat-value text-purple" id="profile-rank">#?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aura Selector -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-green">AURA@SELECTION:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="aura-selector">
+                            <p class="text-small text-gray-400">Choisis ton aura textuelle:</p>
+                            
+                            <div class="aura-options">
+                                <div class="aura-option" data-aura="mystique">
+                                    <div class="aura-color bg-green"></div>
+                                    <span class="aura-name text-green">Mystique</span>
+                                    <span class="aura-status text-green">ACTIF</span>
+                                </div>
+                                
+                                <div class="aura-option" data-aura="provocateur">
+                                    <div class="aura-color bg-red"></div>
+                                    <span class="aura-name text-red">Provocateur</span>
+                                    <span class="aura-status">CHANGER</span>
+                                </div>
+                                
+                                <div class="aura-option" data-aura="sage">
+                                    <div class="aura-color bg-blue"></div>
+                                    <span class="aura-name text-blue">Sage</span>
+                                    <span class="aura-status">CHANGER</span>
+                                </div>
+                                
+                                <div class="aura-option" data-aura="poète">
+                                    <div class="aura-color bg-yellow"></div>
+                                    <span class="aura-name text-yellow">Poète</span>
+                                    <span class="aura-status">CHANGER</span>
+                                </div>
+                                
+                                <div class="aura-option" data-aura="troll">
+                                    <div class="aura-color bg-purple"></div>
+                                    <span class="aura-name text-purple">Troll</span>
+                                    <span class="aura-status">CHANGER</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-area">
+                <!-- Edit Profile -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-blue">PROFILE@EDIT:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label class="form-label text-green">À propos de vous</label>
+                                <textarea 
+                                    id="profile-bio" 
+                                    class="form-textarea" 
+                                    placeholder="Parlez-nous de vous en quelques mots..."
+                                    maxlength="200"
+                                ></textarea>
+                                <div class="character-count text-small text-right">
+                                    <span id="bio-character-count">0</span>/200 caractères
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-button">
+                                <i data-lucide="save"></i> Sauvegarder
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Stats Overview -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-yellow">STATS@OVERVIEW:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <h4 class="stat-title text-green">Total Followers</h4>
+                                <p class="stat-value-large" id="total-followers">0</p>
+                                <p class="stat-desc text-small" id="followers-desc">
+                                    Keep posting quality content
+                                </p>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <h4 class="stat-title text-blue">Membre depuis</h4>
+                                <p class="stat-value-large" id="member-since">01/01/2025</p>
+                                <p class="stat-desc text-small" id="days-count">0 jours</p>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <h4 class="stat-title text-purple">Rang actuel</h4>
+                                <p class="stat-value-large">#?</p>
+                                <p class="stat-desc text-small">
+                                    Viser le statut THE ONE
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <h4 class="stat-title text-red">La route vers "THE ONE"</h4>
+                            <div class="progress-bar-large">
+                                <div class="progress-fill" id="the-one-progress"></div>
+                            </div>
+                            <p class="text-small text-gray-400 text-center mt-1">
+                                Continuez à gagner des followers pour devenir THE ONE
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>THE ONE CHAT | v1.0.0 | Expérience textuelle rétro-futuriste</p>
+            <p>Pas de photos. Pas de vidéos. Que du texte. Que des idées.</p>
+            <div class="footer-links">
+                <a href="about.html">À propos</a>
+                <a href="rules.html">Règles</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scanline effect -->
+    <div class="scanline"></div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content terminal-box">
+            <div class="auth-container">
+                <h2 class="modal-title text-green">
+                    THE ONE CHAT
+                    <span class="cursor-blink">_</span>
+                </h2>
+                
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+                
+                <div class="auth-forms">
+                    <form id="login-form" class="auth-form active">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-input" id="login-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="login-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Connect</button>
+                    </form>
+                    
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-input" id="register-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="register-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Create Account</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="auth-info">
+                <h2 class="info-title">Become THE ONE <span class="cursor-blink">_</span></h2>
+                <p class="info-desc">
+                    Bienvenue dans l'arène textuelle du futur. Un forum-chat rétro-moderne où chaque mot compte et peut vous faire gagner ou perdre de l'influence.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <i data-lucide="key"></i>
+                        <h3 class="text-green">Pseudo Unique</h3>
+                        <p>Choisissez votre identité. Votre réputation vous suivra.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="message-square"></i>
+                        <h3 class="text-blue">Salons Thématiques</h3>
+                        <p>Philo, amour, débats, poésie... Trouvez votre terrain d'expression.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="zap"></i>
+                        <h3 class="text-yellow">Messages One-Shot</h3>
+                        <p>Des messages qui s'autodétruisent après lecture.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="trophy"></i>
+                        <h3 class="text-purple">Système de Followers</h3>
+                        <p>Gagnez ou perdez des abonnés selon la qualité de vos messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

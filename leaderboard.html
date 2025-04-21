@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classements - THE ONE CHAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-terminal-black">
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="container">
+            <div class="nav-content">
+                <h1 class="site-title">
+                    <span class="glitch-effect">THE ONE CHAT</span>
+                    <span class="cursor-blink">_</span>
+                </h1>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">SALONS</a>
+                    <a href="profile.html" class="nav-link">PROFIL</a>
+                    <a href="leaderboard.html" class="nav-link active">CLASSEMENTS</a>
+                    <a href="about.html" class="nav-link">À PROPOS</a>
+                </div>
+                <div class="nav-auth">
+                    <span id="user-status" class="user-pill"></span>
+                    <button id="logout-button" class="icon-button">
+                        <i data-lucide="log-out"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="page-header">
+            <a href="index.html" class="back-link">
+                <i data-lucide="arrow-left"></i> Retour aux salons
+            </a>
+            <h2 class="page-title text-green">Classements des Utilisateurs</h2>
+        </div>
+
+        <div class="grid-layout">
+            <!-- Main Leaderboard -->
+            <div class="main-area">
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-blue">TOP@INFLUENCERS:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="leaderboard-content">
+                            <div class="leaderboard-header">
+                                <span class="leaderboard-rank">Rang</span>
+                                <span class="leaderboard-user">Utilisateur</span>
+                                <span class="leaderboard-followers">Followers</span>
+                                <span class="leaderboard-aura">Aura</span>
+                                <span class="leaderboard-trend">Tendance</span>
+                            </div>
+                            
+                            <div class="leaderboard-table" id="full-leaderboard">
+                                <!-- Top users will be loaded here -->
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank text-yellow">#1</span>
+                                    <span class="leaderboard-user">PixelPoet</span>
+                                    <span class="leaderboard-followers text-green">782</span>
+                                    <span class="leaderboard-aura text-green">Mystique</span>
+                                    <span class="leaderboard-trend text-green">+23</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank text-gray-400">#2</span>
+                                    <span class="leaderboard-user">SyntaxSage</span>
+                                    <span class="leaderboard-followers text-green">651</span>
+                                    <span class="leaderboard-aura text-blue">Sage</span>
+                                    <span class="leaderboard-trend text-green">+15</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank text-red">#3</span>
+                                    <span class="leaderboard-user">CyberPunk2077</span>
+                                    <span class="leaderboard-followers text-green">543</span>
+                                    <span class="leaderboard-aura text-red">Provocateur</span>
+                                    <span class="leaderboard-trend text-green">+8</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank">#4</span>
+                                    <span class="leaderboard-user">ElectronWizard</span>
+                                    <span class="leaderboard-followers text-green">498</span>
+                                    <span class="leaderboard-aura text-yellow">Poète</span>
+                                    <span class="leaderboard-trend text-red">-3</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank">#5</span>
+                                    <span class="leaderboard-user">QuantumThinker</span>
+                                    <span class="leaderboard-followers text-green">467</span>
+                                    <span class="leaderboard-aura text-purple">Troll</span>
+                                    <span class="leaderboard-trend text-green">+19</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank">#6</span>
+                                    <span class="leaderboard-user">GlitchMaster</span>
+                                    <span class="leaderboard-followers text-green">432</span>
+                                    <span class="leaderboard-aura text-red">Provocateur</span>
+                                    <span class="leaderboard-trend text-green">+4</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank">#7</span>
+                                    <span class="leaderboard-user">ByteDancer</span>
+                                    <span class="leaderboard-followers text-green">387</span>
+                                    <span class="leaderboard-aura text-yellow">Poète</span>
+                                    <span class="leaderboard-trend text-red">-7</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank">#8</span>
+                                    <span class="leaderboard-user">CodePhantom</span>
+                                    <span class="leaderboard-followers text-green">354</span>
+                                    <span class="leaderboard-aura text-green">Mystique</span>
+                                    <span class="leaderboard-trend text-green">+12</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank">#9</span>
+                                    <span class="leaderboard-user">SyntaxError</span>
+                                    <span class="leaderboard-followers text-green">319</span>
+                                    <span class="leaderboard-aura text-purple">Troll</span>
+                                    <span class="leaderboard-trend text-green">+2</span>
+                                </div>
+                                
+                                <div class="leaderboard-row">
+                                    <span class="leaderboard-rank">#10</span>
+                                    <span class="leaderboard-user">NeonShadow</span>
+                                    <span class="leaderboard-followers text-green">286</span>
+                                    <span class="leaderboard-aura text-blue">Sage</span>
+                                    <span class="leaderboard-trend text-red">-1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Burn of the Week -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-red">BURNS@OF-THE-WEEK:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="burns-container">
+                            <div class="burn-box">
+                                <p class="burn-text">"On ne s'améliore pas en évitant les erreurs, mais en les comprenant. La seule vraie erreur est celle dont on ne tire aucune leçon."</p>
+                                <div class="burn-meta">
+                                    <p class="burn-author text-blue">ElectronWizard</p>
+                                    <div class="burn-rating">
+                                        <i data-lucide="flame" class="text-red"></i>
+                                        <span>27 upvotes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="burn-box">
+                                <p class="burn-text">"La différence entre un amateur et un pro n'est pas le talent, mais la capacité à continuer quand personne ne regarde."</p>
+                                <div class="burn-meta">
+                                    <p class="burn-author text-purple">QuantumThinker</p>
+                                    <div class="burn-rating">
+                                        <i data-lucide="flame" class="text-red"></i>
+                                        <span>23 upvotes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="burn-box">
+                                <p class="burn-text">"Ta logique est aussi bug-free que Windows ME."</p>
+                                <div class="burn-meta">
+                                    <p class="burn-author text-red">GlitchMaster</p>
+                                    <div class="burn-rating">
+                                        <i data-lucide="flame" class="text-red"></i>
+                                        <span>19 upvotes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Your Position -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-yellow">YOUR@POSITION:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="user-position">
+                            <div class="position-header">
+                                <i data-lucide="user" class="text-green"></i>
+                                <span class="text-green" id="user-name">CyberNomad</span>
+                            </div>
+                            <div class="position-stats">
+                                <div class="position-stat">
+                                    <span class="position-label">Rang actuel</span>
+                                    <span class="position-value text-purple">#125</span>
+                                </div>
+                                <div class="position-stat">
+                                    <span class="position-label">Followers</span>
+                                    <span class="position-value text-green">125</span>
+                                </div>
+                                <div class="position-stat">
+                                    <span class="position-label">Tendance</span>
+                                    <span class="position-value text-green">+3</span>
+                                </div>
+                            </div>
+                            <div class="progress-to-top">
+                                <div class="progress-label">
+                                    <span>Distance par rapport au TOP 10</span>
+                                    <span id="followers-needed">161 followers</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 43%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weekly Stats -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-blue">WEEKLY@STATISTICS:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="stats-container">
+                            <div class="stats-item">
+                                <div class="stats-header">
+                                    <i data-lucide="trending-up" class="text-green"></i>
+                                    <span>Meilleure progression</span>
+                                </div>
+                                <div class="stats-user">
+                                    <span class="stats-username">PixelPoet</span>
+                                    <span class="stats-value text-green">+78 followers</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stats-item">
+                                <div class="stats-header">
+                                    <i data-lucide="trending-down" class="text-red"></i>
+                                    <span>Plus forte chute</span>
+                                </div>
+                                <div class="stats-user">
+                                    <span class="stats-username">ByteDancer</span>
+                                    <span class="stats-value text-red">-42 followers</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stats-item">
+                                <div class="stats-header">
+                                    <i data-lucide="zap" class="text-yellow"></i>
+                                    <span>OneShot le plus vu</span>
+                                </div>
+                                <div class="stats-user">
+                                    <span class="stats-username">QuantumThinker</span>
+                                    <span class="stats-value text-yellow">32 vues</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stats-item">
+                                <div class="stats-header">
+                                    <i data-lucide="message-square" class="text-blue"></i>
+                                    <span>Message le plus voté</span>
+                                </div>
+                                <div class="stats-user">
+                                    <span class="stats-username">ElectronWizard</span>
+                                    <span class="stats-value text-blue">42 votes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Events -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <h3 class="terminal-title text-purple">UPCOMING@EVENTS:~$</h3>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="event-day">18</span>
+                                    <span class="event-month">AVRIL</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4 class="event-title text-green">La Ligue des Mots</h4>
+                                    <p class="event-desc">Compétition d'éloquence sur le thème "Intelligence Artificielle: Allié ou Ennemi?"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="event-day">25</span>
+                                    <span class="event-month">AVRIL</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4 class="event-title text-purple">Cérémonie des Anciens</h4>
+                                    <p class="event-desc">Événement exclusif pour les membres de plus de 3 mois. Fonctionnalités secrètes débloquées!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="event-day">01</span>
+                                    <span class="event-month">MAI</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4 class="event-title text-blue">Archives Publiques</h4>
+                                    <p class="event-desc">Ouverture des archives du mois précédent avec les meilleures conversations conservées.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>THE ONE CHAT | v1.0.0 | Expérience textuelle rétro-futuriste</p>
+            <p>Pas de photos. Pas de vidéos. Que du texte. Que des idées.</p>
+            <div class="footer-links">
+                <a href="about.html">À propos</a>
+                <a href="rules.html">Règles</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scanline effect -->
+    <div class="scanline"></div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content terminal-box">
+            <div class="auth-container">
+                <h2 class="modal-title text-green">
+                    THE ONE CHAT
+                    <span class="cursor-blink">_</span>
+                </h2>
+                
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+                
+                <div class="auth-forms">
+                    <form id="login-form" class="auth-form active">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-input" id="login-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="login-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Connect</button>
+                    </form>
+                    
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-input" id="register-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="register-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Create Account</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="auth-info">
+                <h2 class="info-title">Become THE ONE <span class="cursor-blink">_</span></h2>
+                <p class="info-desc">
+                    Bienvenue dans l'arène textuelle du futur. Un forum-chat rétro-moderne où chaque mot compte et peut vous faire gagner ou perdre de l'influence.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <i data-lucide="key"></i>
+                        <h3 class="text-green">Pseudo Unique</h3>
+                        <p>Choisissez votre identité. Votre réputation vous suivra.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="message-square"></i>
+                        <h3 class="text-blue">Salons Thématiques</h3>
+                        <p>Philo, amour, débats, poésie... Trouvez votre terrain d'expression.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="zap"></i>
+                        <h3 class="text-yellow">Messages One-Shot</h3>
+                        <p>Des messages qui s'autodétruisent après lecture.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i data-lucide="trophy"></i>
+                        <h3 class="text-purple">Système de Followers</h3>
+                        <p>Gagnez ou perdez des abonnés selon la qualité de vos messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="leaderboard.js"></script>
+</body>
+</html>

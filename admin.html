@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ONE CHAT - Administration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #0d0d0d;
+            border: 1px solid #1f1f1f;
+            border-radius: 5px;
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #1f1f1f;
+        }
+        
+        .admin-header h1 {
+            color: #0f0;
+            font-size: 24px;
+            margin: 0;
+            text-shadow: 0 0 5px #0f0;
+        }
+        
+        .admin-menu {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .admin-menu button {
+            background-color: #1a1a1a;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-menu button:hover, .admin-menu button.active {
+            background-color: #0f0;
+            color: #000;
+            text-shadow: 0 0 5px #000;
+        }
+        
+        .admin-section {
+            display: none;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border: 1px solid #1f1f1f;
+            border-radius: 3px;
+        }
+        
+        .admin-section.active {
+            display: block;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .admin-table th, .admin-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #1f1f1f;
+        }
+        
+        .admin-table th {
+            background-color: #111;
+            color: #0f0;
+            font-weight: bold;
+        }
+        
+        .admin-table tr:hover {
+            background-color: #222;
+        }
+        
+        .action-btn {
+            background-color: transparent;
+            color: #0f0;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .action-btn:hover {
+            text-decoration: underline;
+        }
+        
+        .action-btn.delete {
+            color: #f00;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #0f0;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 8px;
+            background-color: #111;
+            border: 1px solid #1f1f1f;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .form-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .form-actions button {
+            padding: 8px 15px;
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .form-actions button.cancel {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .statistics-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+        }
+        
+        .stat-card h3 {
+            margin-top: 0;
+            color: #0f0;
+            font-size: 16px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin: 10px 0;
+        }
+        
+        .login-screen {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #0d0d0d;
+            border: 1px solid #1f1f1f;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+        
+        .login-screen h2 {
+            color: #0f0;
+            text-align: center;
+            margin-top: 0;
+            text-shadow: 0 0 5px #0f0;
+        }
+        
+        .login-screen .form-actions {
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-screen" id="admin-login">
+            <h2>THE ONE CHAT</h2>
+            <h3 class="text-center">Administration</h3>
+            <div class="form-group">
+                <label for="admin-username">Nom d'utilisateur</label>
+                <input type="text" id="admin-username" placeholder="Nom d'utilisateur admin">
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Mot de passe</label>
+                <input type="password" id="admin-password" placeholder="Mot de passe admin">
+            </div>
+            <div class="form-actions">
+                <button id="admin-login-btn">Connexion</button>
+            </div>
+        </div>
+
+        <div class="admin-container" id="admin-panel" style="display: none;">
+            <div class="admin-header">
+                <h1>THE ONE CHAT - Administration</h1>
+                <button id="admin-logout-btn" class="action-btn">Déconnexion</button>
+            </div>
+            
+            <div class="admin-menu">
+                <button class="menu-btn active" data-section="dashboard">Tableau de bord</button>
+                <button class="menu-btn" data-section="users">Utilisateurs</button>
+                <button class="menu-btn" data-section="rooms">Salons</button>
+                <button class="menu-btn" data-section="messages">Messages</button>
+                <button class="menu-btn" data-section="voixoff">Voix Off</button>
+                <button class="menu-btn" data-section="settings">Paramètres</button>
+            </div>
+            
+            <!-- Dashboard Section -->
+            <div id="dashboard-section" class="admin-section active">
+                <h2>Tableau de bord</h2>
+                <div class="statistics-cards">
+                    <div class="stat-card">
+                        <h3>Utilisateurs Totaux</h3>
+                        <div class="stat-value" id="total-users">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Messages Aujourd'hui</h3>
+                        <div class="stat-value" id="today-messages">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Utilisateurs Actifs</h3>
+                        <div class="stat-value" id="active-users">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>One-Shots Envoyés</h3>
+                        <div class="stat-value" id="oneshots-sent">0</div>
+                    </div>
+                </div>
+                
+                <h3>Burn du Jour</h3>
+                <div class="message-card" id="burn-of-day">
+                    <p>Aucun message populaire pour le moment</p>
+                </div>
+                
+                <h3>Activité Récente</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Utilisateur</th>
+                            <th>Date</th>
+                            <th>Détails</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recent-activity">
+                        <!-- Recent activity will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Users Section -->
+            <div id="users-section" class="admin-section">
+                <h2>Gestion des Utilisateurs</h2>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Date d'inscription</th>
+                            <th>Followers</th>
+                            <th>Aura</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table">
+                        <!-- Users will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Rooms Section -->
+            <div id="rooms-section" class="admin-section">
+                <h2>Gestion des Salons</h2>
+                <button id="add-room-btn" class="action-btn">+ Ajouter un salon</button>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Description</th>
+                            <th>Couleur</th>
+                            <th>Actif</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rooms-table">
+                        <!-- Rooms will be populated here -->
+                    </tbody>
+                </table>
+                
+                <!-- Room Form (hidden by default) -->
+                <div id="room-form" style="display: none;">
+                    <h3 id="room-form-title">Ajouter un salon</h3>
+                    <input type="hidden" id="room-id">
+                    <div class="form-group">
+                        <label for="room-name">Nom du salon</label>
+                        <input type="text" id="room-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="room-description">Description</label>
+                        <textarea id="room-description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-color">Couleur</label>
+                        <select id="room-color">
+                            <option value="blue">Bleu</option>
+                            <option value="green">Vert</option>
+                            <option value="purple">Violet</option>
+                            <option value="red">Rouge</option>
+                            <option value="yellow">Jaune</option>
+                            <option value="cyan">Cyan</option>
+                            <option value="magenta">Magenta</option>
+                            <option value="gray">Gris</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-active">Statut</label>
+                        <select id="room-active">
+                            <option value="true">Actif</option>
+                            <option value="false">Inactif</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button class="cancel" id="cancel-room">Annuler</button>
+                        <button id="save-room">Enregistrer</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Messages Section -->
+            <div id="messages-section" class="admin-section">
+                <h2>Gestion des Messages</h2>
+                <div class="form-group">
+                    <label for="messages-filter">Filtrer par salon</label>
+                    <select id="messages-filter">
+                        <option value="all">Tous les salons</option>
+                        <!-- Rooms will be populated here -->
+                    </select>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Contenu</th>
+                            <th>Utilisateur</th>
+                            <th>Salon</th>
+                            <th>Date</th>
+                            <th>Upvotes</th>
+                            <th>Downvotes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messages-table">
+                        <!-- Messages will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- VoixOff Section -->
+            <div id="voixoff-section" class="admin-section">
+                <h2>Système Voix Off</h2>
+                <p>Envoyer un message anonyme à tous les utilisateurs sur un salon spécifique.</p>
+                <div class="form-group">
+                    <label for="voixoff-room">Salon cible</label>
+                    <select id="voixoff-room">
+                        <!-- Rooms will be populated here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="voixoff-message">Message</label>
+                    <textarea id="voixoff-message" placeholder="Votre message anonyme..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="voixoff-type">Type de message</label>
+                    <select id="voixoff-type">
+                        <option value="normal">Normal</option>
+                        <option value="oneshot">One-Shot (disparaît après lecture)</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button id="send-voixoff">Envoyer</button>
+                </div>
+                
+                <h3>Historique des messages Voix Off</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Contenu</th>
+                            <th>Salon</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Vues</th>
+                        </tr>
+                    </thead>
+                    <tbody id="voixoff-history">
+                        <!-- VoixOff history will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Settings Section -->
+            <div id="settings-section" class="admin-section">
+                <h2>Paramètres du site</h2>
+                <div class="form-group">
+                    <label for="site-name">Nom du site</label>
+                    <input type="text" id="site-name" value="THE ONE CHAT">
+                </div>
+                <div class="form-group">
+                    <label for="site-description">Description</label>
+                    <textarea id="site-description">Un forum chat rétro-moderne uniquement texte où les utilisateurs s'affrontent pour devenir "THE ONE"</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="burn-threshold">Seuil pour "Burn du jour" (upvotes)</label>
+                    <input type="number" id="burn-threshold" value="5">
+                </div>
+                <div class="form-group">
+                    <label for="max-messages">Nombre de messages à charger par salon</label>
+                    <input type="number" id="max-messages" value="50">
+                </div>
+                <div class="form-group">
+                    <label for="ancient-days">Jours requis pour devenir "Ancient" (vétéran)</label>
+                    <input type="number" id="ancient-days" value="30">
+                </div>
+                <div class="form-actions">
+                    <button id="save-settings">Enregistrer les paramètres</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
