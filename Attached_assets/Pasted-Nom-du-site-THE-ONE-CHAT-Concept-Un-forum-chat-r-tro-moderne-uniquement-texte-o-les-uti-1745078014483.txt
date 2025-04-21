@@ -1,0 +1,47 @@
+Nom du site :
+
+THE ONE CHAT
+
+⸻
+
+Concept :
+
+Un forum-chat rétro-moderne, uniquement texte, où les utilisateurs discutent dans des salons publics ou privés.
+Le twist : chaque message peut te faire gagner des abonnés (followers), mais attention, si tu dis n’importe quoi, tu peux aussi en perdre.
+Le but ? Devenir “THE ONE” — celui ou celle qui a le plus d’influence textuelle sur le site.
+
+⸻
+
+Univers & style :
+	•	Design rétro-futuriste : look de vieux terminaux (type BBS / Matrix / 80s hacker), mais en version clean & responsive, avec une UX moderne.
+	•	Interface sombre, animations minimalistes, police monospace
+	•	Pas de photos, pas de vidéos, pas de gifs — que du pur texte.
+
+⸻
+
+Fonctionnalités clés :
+	1.	Salons thématiques ouverts en continu (philo, amour, absurdités, provoc, débats, poésie, “pose ton style”, etc.)
+	2.	Système de followers live :
+	•	Tu gagnes des abonnés si tes punchlines, idées ou vibes plaisent
+	•	Tu peux voir ton compteur évoluer en direct dans une mini console
+	3.	Classement en temps réel :
+	•	Top 10 “Influenceurs du verbe”
+	•	“Burn of the Day”, “Réflexion du siècle”, “Roast du mois”
+	4.	Pseudo unique & aura personnalisable :
+	•	Chaque pseudo est unique, et ta réputation te suit
+	•	Tu peux avoir une “aura” selon ton style : mystique, troll, sage, lover, etc.
+	5.	Message “one-shot” : tu peux balancer un message visible une seule fois pour tout le monde — une punchline mystique qui s’autodétruit (mode “oracle”)
+
+⸻
+
+Améliorations possibles :
+	•	“Ligue des mots” : Tournois hebdos où les users s’affrontent par texte sur un thème (ex: meilleur haïku, meilleur troll, meilleur discours de rupture)
+	•	“Les Anciens” : Un club secret pour les users avec une longévité ou un style inimitable
+	•	Badges cachés à débloquer (genre “t’as fait pleurer un modérateur”, “10 punchlines validées par la foule”, etc.)
+	•	Salon “Voix Off” : un lieu où des modérateurs anonymes laissent des messages mystérieux ou des citations à deviner
+	•	Archives publiques : les meilleurs échanges conservés comme des reliques textuelles
+
+⸻
+
+Modèle gratuit, mais engageant :
+	•	Pas de pubs.
